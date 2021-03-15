@@ -17,11 +17,18 @@ class Hero{
         console.log('Your current health levels are at ' + this.health)
     }
     fight(){
-        console.log('I\'m ready to rumble')
-    }
+        // console.log('I\'m ready to rumble')
+         //access one weapon and console log its hitpoints
+             //const random3 = Math.floor(Math.random()* this.weapons.length);
+             //return this.weapons = this.weapons[random3]
+
+        console.log ("You chose " + this.weapons + "which uses " + this.weapons.sprinkleSpray + " points")
+     }
 }
 const Donut = new Hero ("Dougie")
 console.log (Donut)
+Donut.fight()
+
 
 class Enemy{
     constructor (name, health, weapons, catchPhrases){
@@ -46,4 +53,24 @@ class Enemy{
 }
 const pizzaRat = new Enemy ("Pizza Rat")
 console.log (pizzaRat)
+
+Donut.talkSass()
 pizzaRat.talkSmack()
+Donut.announceHealth()
+pizzaRat.announceHealth()
+
+//I couldn't figure out how to have Dougie and Pizza Rat fight. Pseudo code is below.
+//Upgrade Donut.fight() to be able to randomly access one of the two weapons when it is called upon.
+//upgrade Donut.fight() to take a parameter:
+    //fight(enemy)
+//Use hitpoints to subtract from enemy's health:
+    //announceHealth(){
+    //     if (fight.enemy === true){
+    //         Hero.health -=1
+    //         }else if (fight.hero == true){
+    //             Enemy.health -=1
+    //         }
+    //     }
+    // console.log (enemy.name + enemy.health)
+    // }
+// Be able to have Dougie and Pizza Rat fight multiple times.

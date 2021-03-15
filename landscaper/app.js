@@ -104,3 +104,4 @@ console.log(tools.includes("Team"))
 if (tools.includes("Team") && bankAccount > 1000){
     console.log("You won!")
 }
+//I'm not sure how to edit this to account for user input and make it work on chrome.

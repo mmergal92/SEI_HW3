@@ -131,3 +131,4 @@ console.log(Timmy)
 Timmy.exercise()
 Timmy.exercise()
 console.log(Timmy)
+//I know it's better to not have to call the function each time, but I'm not sure of a cleaner way to write this function. 

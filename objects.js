@@ -2,7 +2,7 @@
 //Hamster
 class Hamster{
     constructor (owner, name, price){
-        this.owner = " ";
+        this.owner = owner;
         this.name = name;
         this.price = 15;
     }
@@ -59,8 +59,74 @@ class Person{
         this.mood--
         this.bankAccount = this.bankAccount + 10
     }
-    buyHamster(){
+    buyHamster(Hamster){
         this.hamsters.push(hamster1)
         this.bankAccount = this.bankAccount - hamster1.getPrice()
     }
 }
+
+const Timmy = new Person ("timmy")
+Timmy.age =5
+console.log(Timmy)
+Timmy.eat()
+Timmy.eat()
+Timmy.eat()
+Timmy.eat()
+Timmy.eat()
+console.log(Timmy)
+Timmy.exercise()
+Timmy.exercise()
+Timmy.exercise()
+Timmy.exercise()
+Timmy.exercise()
+console.log(Timmy)
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+console.log(Timmy)
+
+class Gussy extends Hamster {
+    constructor (owner, name, price){
+    super(owner,name,price);
+        this.owner = "Timmy"
+        this.name = "Gus"
+        this.price = 15
+}
+}   
+const Gus = new Gussy ()
+
+console.log(Gus);
+
+Timmy.buyHamster(Gus)
+console.log(Timmy)
+//not getting Gus here and I think it's because the "buy Hamster" function is calling Hamster 1 inside the function. Not sure how to make it call the Gussy function.
+
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+Timmy.ageUp()
+console.log (Timmy)
+
+Timmy.eat()
+Timmy.eat()
+console.log(Timmy)
+Timmy.exercise()
+Timmy.exercise()
+console.log(Timmy)

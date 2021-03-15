@@ -9,10 +9,11 @@ class Hero{
         this.catchPhrases = ['i\'m fresher than day old pizza', 'you can\'t count my calories']
     }
     talkSass(){
-        //randomly log catchphrases with Math.random function
-        console.log()
+        //log one of the catchPhrases randomly
+            const random = Math.floor(Math.random()* this.catchPhrases.length);
+            console.log(this.catchPhrases[random]);
     }
-    announcHealth(){
+    announceHealth(){
         console.log('Your current health levels are at ' + this.health)
     }
     fight(){
@@ -32,14 +33,11 @@ class Enemy{
         }
         this.catchPhrases = ['i\'m Youtube famous', 'i\'m more dangerous than an uncovered sewer']
     }
-    talkSass(){
-        function randomNumInRange (min, max){
-            let n = Math.random()*(max-min)+min;
-            return(n);
-          }
-        console.log()
+    talkSmack(){
+            const random = Math.floor(Math.random()* this.catchPhrases.length);
+            console.log(this.catchPhrases[random]);
     }
-    announcHealth(){
+    announceHealth(){
         console.log('Your current health levels are at ' + this.health)
     }
     fight(){
@@ -48,3 +46,4 @@ class Enemy{
 }
 const pizzaRat = new Enemy ("Pizza Rat")
 console.log (pizzaRat)
+pizzaRat.talkSmack()

@@ -1,7 +1,7 @@
 class Hero{
-    constructor (name, health, weapons, catchPhrases){
+    constructor (name, health = 100, weapons, catchPhrases){
         this.name = name;
-        this.health = 100;
+        this.health = health;
         this.weapons = {
             sprinkleSpray: 5,
             sugarShock: 10
@@ -16,27 +16,24 @@ class Hero{
     announceHealth(){
         console.log('Your current health levels are at ' + this.health)
     }
-    fight(){
-        // console.log('I\'m ready to rumble')
-         //access one weapon and console log its hitpoints
-             //const random3 = Math.floor(Math.random()* this.weapons.length);
-             //return this.weapons = this.weapons[random3]
-
-        console.log ("You chose " + this.weapons + "which uses " + this.weapons.sprinkleSpray + " points")
+    fight(Enemy){
+        const weapon = [this.weapons.sprinkleSpray, this.weapons.sugarShock]
+        Enemy.health -= weapon[Math.round(Math.random())] 
+        console.log(" health is now " + Enemy.health)
+        }
+        //console.log ("You chose " + this.weapons + "which uses " + this.weapons.sprinkleSpray + " points")
      }
-}
-const Donut = new Hero ("Dougie")
-console.log (Donut)
-Donut.fight()
+const Dougie = new Hero ("Dougie Donut")
+console.log (Dougie)
 
 
 class Enemy{
-    constructor (name, health, weapons, catchPhrases){
+    constructor (name, health = 100, weapons, catchPhrases){
         this.name = name;
-        this.health = 100;
+        this.health = health;
         this.weapons = {
-            pepperoniStars: 5,
-            cheeseGrease: 10
+            pepperoniStars: 15,
+            cheeseGrease: 20
         }
         this.catchPhrases = ['i\'m Youtube famous', 'i\'m more dangerous than an uncovered sewer']
     }
@@ -47,30 +44,24 @@ class Enemy{
     announceHealth(){
         console.log('Your current health levels are at ' + this.health)
     }
-    fight(){
-        console.log('I\'m gonna flatten you like a slice of pepperoni!')
+    fight(Hero){
+        //console.log('I\'m gonna flatten you like a slice of pepperoni!')
+        const weapon = [this.weapons.pepperoniStars, this.weapons.cheeseGrease]
+        Hero.health -= weapon[Math.round(Math.random())] 
+        console.log(" health is now " + Hero.health)
+        }
+        //console.log ("You chose " + this.weapons + "which uses " + this.weapons.sprinkleSpray + " points") 
     }
-}
 const pizzaRat = new Enemy ("Pizza Rat")
 console.log (pizzaRat)
 
-Donut.talkSass()
+Dougie.talkSass()
 pizzaRat.talkSmack()
-Donut.announceHealth()
+Dougie.announceHealth()
+pizzaRat.announceHealth()
+Dougie.fight(pizzaRat)
+pizzaRat.fight(Dougie)
+Dougie.announceHealth()
 pizzaRat.announceHealth()
 
-//I couldn't figure out how to have Dougie and Pizza Rat fight. Pseudo code is below.
-//Upgrade Donut.fight() to be able to randomly access one of the two weapons when it is called upon.
-//upgrade Donut.fight() to take a parameter:
-    //fight(enemy)
-//Use hitpoints to subtract from enemy's health:
-    //announceHealth(){
-    //     if (fight.enemy === true){
-    //         Hero.health -=1
-    //         }else if (fight.hero == true){
-    //             Enemy.health -=1
-    //         }
-    //     }
-    // console.log (enemy.name + enemy.health)
-    // }
 // Be able to have Dougie and Pizza Rat fight multiple times.
